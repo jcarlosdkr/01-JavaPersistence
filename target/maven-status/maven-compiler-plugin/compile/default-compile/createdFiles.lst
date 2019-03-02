@@ -1,0 +1,3 @@
+com\jc\domain\Tramite.class
+com\jc\test\Principal.class
+com\jc\util\HibernateUtil.class
