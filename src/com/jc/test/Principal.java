@@ -13,6 +13,7 @@ public class Principal {
 
 	public static void main(String[] args){
 		Session session = HibernateUtil.getSessionFactoty().openSession();
+
 		session.beginTransaction();
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");

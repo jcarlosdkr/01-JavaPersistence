@@ -2,11 +2,7 @@ package com.jc.domain;
 
 import java.sql.Timestamp;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
 
-@Entity
-@Table
 public class Tramite {
 
 	private int idTramite;
