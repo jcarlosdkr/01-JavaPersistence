@@ -19,11 +19,11 @@ public class Principal {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 		Date date = new Date();
 		
-		Tramite tramite = new Tramite("Credito", new Timestamp(date.getTime()));
+		Tramite tramite = new Tramite("Avaluo", new Timestamp(date.getTime()));
 		
 		// Salvar el Tramite   
 		session.save(tramite); // insert into Tramite (tipoTramite, fechaTramite) values (?, ?)
-		
+
 		session.getTransaction().commit();
 		session.close();
 	}

@@ -2,11 +2,24 @@ package com.jc.domain;
 
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "Tramite")
 public class Tramite {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "idTramite")
 	private int idTramite;
+	@Column(name = "tipoTramite")
 	private String tipoTramite;
+	@Column(name = "fechaTramite")
 	private Timestamp fechaCreacion;
 
 	public Tramite() {
@@ -42,4 +55,19 @@ public class Tramite {
 		this.fechaCreacion = fechaCreacion;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Tramite [idTramite=");
+		builder.append(idTramite);
+		builder.append(", tipoTramite=");
+		builder.append(tipoTramite);
+		builder.append(", fechaCreacion=");
+		builder.append(fechaCreacion);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	
+	
 }
