@@ -58,11 +58,11 @@ public class Tramite {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Tramite [idTramite=");
+		builder.append("Tramite [idTramite = ");
 		builder.append(idTramite);
-		builder.append(", tipoTramite=");
+		builder.append(", tipoTramite = ");
 		builder.append(tipoTramite);
-		builder.append(", fechaCreacion=");
+		builder.append(", fechaCreacion = ");
 		builder.append(fechaCreacion);
 		builder.append("]");
 		return builder.toString();

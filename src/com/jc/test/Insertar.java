@@ -9,7 +9,7 @@ import org.hibernate.Session;
 import com.jc.domain.Tramite;
 import com.jc.util.HibernateUtil;
 
-public class Principal {
+public class Insertar {
 
 	public static void main(String[] args){
 		Session session = HibernateUtil.getSessionFactoty().openSession();
