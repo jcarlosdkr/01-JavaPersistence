@@ -21,8 +21,8 @@ public class Principal {
 		
 		Tramite tramite = new Tramite("Credito", new Timestamp(date.getTime()));
 		
-		// Salvar el Tramite 
-		session.save(tramite);
+		// Salvar el Tramite   
+		session.save(tramite); // insert into Tramite (tipoTramite, fechaTramite) values (?, ?)
 		
 		session.getTransaction().commit();
 		session.close();
