@@ -35,7 +35,7 @@ public class CRUDCriteria {
 			// Construyebdo la consulta
 			// Se obtiene un solo registro con la consulta select * from tramite
 			// where idTramite = 2
-			criteria.select(root).where(builder.equal(root.get(Tramite_.idTramite), 4));
+			criteria.select(root).where(builder.equal(root.get(Tramite_.idTramite), 6));
 
 			// Ya que la consulta criteria solo devuelve un registro
 			// Se regresa al nuevo objeto tramite y se modifica
@@ -44,7 +44,7 @@ public class CRUDCriteria {
 
 			// Se creará otro trámite
 			Date date = new Date();
-			Tramite tramite2 = new Tramite("Nuevo Avaluo", new Timestamp(date.getTime()));
+			Tramite tramite2 = new Tramite("Nuevo Crédito", new Timestamp(date.getTime()));
 
 			// con persistencia se acualiza el nuevo tipoTramite
 			// usando los métodos update hace la actualización
