@@ -2,7 +2,6 @@ package com.jc.test;
 
 import java.sql.Timestamp;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -55,11 +54,10 @@ public class CRUDCriteria {
 			session.saveOrUpdate(tramite);
 			session.saveOrUpdate(tramite2);
 
-			
 			// Boorrar un registro
-			
+
 			session.delete(tramite);
-			
+
 			tx.commit();
 		} catch (Exception e) {
 			if (tx != null) {
