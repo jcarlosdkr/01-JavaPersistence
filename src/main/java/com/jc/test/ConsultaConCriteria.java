@@ -1,4 +1,4 @@
-package com.jc.test;
+/*package com.jc.test;
 
 
 import java.util.List;
@@ -54,3 +54,4 @@ public class ConsultaConCriteria {
 	}
 	
 }
+*/

@@ -1,7 +1,6 @@
-/*package com.jc.test;
+package com.jc.test;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -14,7 +13,7 @@ import com.jc.domain.Tramite;
 import com.jc.domain.Tramite_;
 import com.jc.util.HibernateUtil;
 
-public class CRUDCriteria {
+public class ConsultarConLike {
 
 	public static void main(String[] args) {
 		Session session = HibernateUtil.getSessionFactoty().openSession();
@@ -33,30 +32,17 @@ public class CRUDCriteria {
 			Root<Tramite> root = criteria.from(Tramite.class);
 
 			// Construyebdo la consulta
-			// Se obtiene un solo registro con la consulta select * from tramite
-			// where idTramite = 2
-			criteria.select(root).where(builder.equal(root.get(Tramite_.idTramite), 6));
+		
+			criteria.select(root).where(
+					builder.like(root.get(Tramite_.tipoTramite), "%crédito%")
+					);
 
-			// Ya que la consulta criteria solo devuelve un registro
-			// Se regresa al nuevo objeto tramite y se modifica
-			Tramite tramite = session.createQuery(criteria).getSingleResult();
-			tramite.setTipoTramite("Avaluo");
+			List<Tramite> tramites = session.createQuery(criteria).getResultList();
+			
+			for(Tramite tram : tramites){
+				System.out.println(tram.toString());
+			}
 
-			// Se creará otro trámite
-			Date date = new Date();
-			Tramite tramite2 = new Tramite("Nuevo Crédito", new Timestamp(date.getTime()));
-
-			// con persistencia se acualiza el nuevo tipoTramite
-			// usando los métodos update hace la actualización
-			// o si el registro es nuevo o se queire actualizar uno existente se
-			// puede ocupar el método saveOrUpdate
-			// session.update(tramite);
-			session.saveOrUpdate(tramite);
-			session.saveOrUpdate(tramite2);
-
-			// Boorrar un registro
-
-			session.delete(tramite);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -71,4 +57,3 @@ public class CRUDCriteria {
 	}
 
 }
-*/

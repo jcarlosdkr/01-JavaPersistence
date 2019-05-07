@@ -1,7 +1,5 @@
 com\jc\domain\Tramite.class
-com\jc\test\CRUDCriteria.class
-com\jc\test\Insertar.class
-com\jc\test\ConsultaConCriteria.class
 com\jc\domain\Tramite_.class
+com\jc\test\Insertar.class
 com\jc\test\Consultar.class
 com\jc\util\HibernateUtil.class
